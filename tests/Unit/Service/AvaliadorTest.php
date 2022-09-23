@@ -1,6 +1,6 @@
 <?php
 
-namespace Treino\Leilao\Tests\Domain;
+namespace Treino\Leilao\Tests\Unit\Service;
 
 use Treino\Leilao\Model\Lance;
 use Treino\Leilao\Model\Leilao;

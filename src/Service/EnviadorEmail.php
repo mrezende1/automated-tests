@@ -6,12 +6,12 @@ use Treino\Leilao\Model\Leilao;
 
 class EnviadorEmail
 {
-    public function notificaTerminoLeilao(Leilao $leilao)
+    public function notificarTerminoLeilao(Leilao $leilao): void
     {
         $sucesso = mail(
-            'usuario@example.com',
+            'usuario@email.com',
             'Leilão finalizado',
-            "Leilão para {$leilao->recuperarDescricao()} finalizado."
+            'O leilão para ' . $leilao->recuperarDescricao() . ' foi finalizado'
         );
 
         if (!$sucesso) {

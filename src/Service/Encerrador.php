@@ -7,12 +7,12 @@ use Treino\Leilao\Dao\Leilao as LeilaoDao;
 class Encerrador
 {
     private $dao;
-    private $enviadorDeEmail;
+    private $enviadorEmail;
 
-    public function __construct(LeilaoDao $dao, EnviadorEmail $enviadorDeEmail)
+    public function __construct(LeilaoDao $dao, EnviadorEmail $enviadorEmail)
     {
         $this->dao = $dao;
-        $this->enviadorDeEmail = $enviadorDeEmail;
+        $this->enviadorEmail = $enviadorEmail;
     }
 
     public function encerra()
@@ -24,7 +24,7 @@ class Encerrador
                 try {
                     $leilao->finaliza();
                     $this->dao->atualiza($leilao);
-                    $this->enviadorDeEmail->notificaTerminoLeilao($leilao);
+                    $this->enviadorEmail->notificarTerminoLeilao($leilao);
                 } catch (\DomainException $e) {
                     error_log($e->getMessage());
                 }

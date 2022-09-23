@@ -2,7 +2,6 @@
 
 namespace Treino\Leilao\Dao;
 
-use Treino\Leilao\Infra\ConnectionCreator;
 use Treino\Leilao\Model\Leilao as ModelLeilao;
 
 class Leilao
